@@ -58,10 +58,12 @@
 			$.each(["mousedown", "touchstart"], function(j, event) {
 
 				options.up.bind(event, function() {
+					if( $(this).parent().hasClass("disabled") ) return;
 					upMouseDown();
 				});
 
 				options.down.bind(event, function() {
+					if( $(this).parent().hasClass("disabled") ) return;
 					downMouseDown();
 				});
 
